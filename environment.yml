@@ -1,0 +1,22 @@
+name: pyopp
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numpy>=2.0
+  - pandas
+  - jupyter
+  - notebook
+  - ipython
+  - pre-commit
+  - nbstripout
+  - sphinx
+  - sphinx-automodapi
+  - sphinx-copybutton
+  - pydata-sphinx-theme
+  - numpydoc
+  - black
+  - sphinx
+  - pip:
+    - ./pygments_style
