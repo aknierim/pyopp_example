@@ -1,16 +1,12 @@
 import numpy as np
 
 
-def lin_fit(
-    x: np.ndarray | float,
-    a: float,
-    b: float
-) -> np.ndarray | float:
+def lin_fit(x: np.ndarray | float, a: float, b: float) -> np.ndarray | float:
     """Linear fit function.
 
     Parameters
     ----------
-    x : np.ndarray or float
+    x : :func:`~np.ndarray` or float
         Array of x-positions.
     a : float
         Slope of the function.
@@ -19,7 +15,7 @@ def lin_fit(
 
     Returns
     -------
-    np.ndarray or float
+    :func:`~np.ndarray` or float
         Resulting y-values.
     """
     return a * x + b
@@ -35,7 +31,7 @@ def exp_fit(
 
     Parameters
     ----------
-    x : np.ndarray
+    x : :func:`np.ndarray`
         Array of x-positions.
     a : float
         Scale of the function.
@@ -46,7 +42,7 @@ def exp_fit(
 
     Returns
     -------
-    np.ndarray or float
+    :func:`np.ndarray` or float
         Resulting y-values.
     """
     return a * np.exp(-b * x) + c

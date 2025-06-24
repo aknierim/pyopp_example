@@ -16,8 +16,10 @@ dependencies:
   - sphinx-automodapi
   - sphinx-copybutton
   - pydata-sphinx-theme
+  - sphinx-design
+  - colour
   - numpydoc
   - black
   - sphinx
   - pip:
-    - ./pygments_style
+    - -e .

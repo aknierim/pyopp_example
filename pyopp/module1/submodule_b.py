@@ -1,8 +1,10 @@
 class Shape(object):
     def __init__(self):
         pass
+
     def area(self):
         return 0
+
 
 class Square(Shape):
     def __init__(self, l: float) -> None:
