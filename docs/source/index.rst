@@ -53,11 +53,12 @@ pyopp
 .. _pyvisgen_docs:
 
 .. toctree::
-  :maxdepth: 1
-  :hidden:
+   :maxdepth: 1
+   :hidden:
 
-  user-guide/index
-  developer-guide/index
-  api-reference/index
-  changelog
+   user-guide/index
+   developer-guide/index
+   api-reference/index
+   changelog
+   tutorials/index
 

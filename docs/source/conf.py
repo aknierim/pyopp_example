@@ -42,6 +42,7 @@ extensions = [
     "numpydoc",
     "IPython.sphinxext.ipython_console_highlighting",
     "sphinx_copybutton",
+    "nbsphinx",
 ]
 
 numpydoc_show_class_members = False
@@ -62,7 +63,7 @@ master_doc = "index"
 
 html_theme = "pydata_sphinx_theme"
 
-html_static_path = ["_static"]
+html_static_path = ["source/_static"]
 html_file_suffix = ".html"
 html_css_files = ["custom.css"]
 
