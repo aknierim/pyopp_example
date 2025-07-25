@@ -11,12 +11,12 @@ def custom_cmap(color_list: list) -> LinearSegmentedColormap:
     Parameters
     ----------
     ramp_colors : list
-        List of hexadecimal color codes with leading 
+        List of hexadecimal color codes with leading
         number sign (#).
 
     Returns
     -------
-    cmap : LinearSegmentedColormap
+    cmap : :class:`~matplotlib.colors.LinearSegmentedColormap`
         A colormap containing the given colors.
     """
 
