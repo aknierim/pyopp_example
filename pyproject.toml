@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=64", "setuptools_scm[toml]>=8"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
 
 [project]
 name = "pyopp"
@@ -18,20 +18,14 @@ classifiers = [
   "Intended Audience :: Science/Research",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Topic :: Scientific/Engineering :: Astronomy",
-  "Topic :: Scientific/Engineering :: Physics",
-  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Programming Language :: Python :: 3.12",
   "Development Status :: 4 - Beta",
 ]
 
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 
 dependencies = [
   "ipython",
-  "joblib",
-  "jupyter",
   "matplotlib",
   "numpy",
   "rich",
@@ -40,7 +34,13 @@ dependencies = [
   "colour",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
+
+dev = [
+  "pre-commit",
+  {include-group = "tests"},
+  {include-group = "docs"},
+]
 
 tests = [
   "coverage!=6.3.0",
@@ -49,42 +49,37 @@ tests = [
   "pytest-cov",
   "pytest-xdist",
   "restructuredtext-lint",
-  "tomli",
-]
-
-dev = [
-  "pre-commit",
 ]
 
 docs = [
   "graphviz",
   "ipython",
   "jupyter",
-  "nbsphinx",
   "notebook",
   "numpydoc",
   "pydata_sphinx_theme",
   "sphinx",
   "sphinx-changelog",
   "sphinx-copybutton",
-  "sphinx-design",
-  "sphinx-gallery >= 0.16.0",
   "sphinx_automodapi",
-  "sphinxcontrib-bibtex",
-  "tomli; python_version < '3.11'",
 ]
 
+[tool.hatch.build.targets.wheel]
+include = ["src/pyopp"]
 
-[tool.setuptools_scm]
-write_to = "pyopp/_version.py"
+[tool.hatch.build.targets.wheel.sources]
+"src/pyopp" = "pyopp"
 
-[tool.setuptools.packages.find]
-where = ["."]
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/pyopp/_version.py"
 
 [tool.coverage.run]
 omit = [
-  "pyopp/version.py",
-  "pryopp/_version.py",
+  "src/pyopp/version.py",
+  "src/pryopp/_version.py",
   "docs/*",
 ]
 

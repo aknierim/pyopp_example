@@ -1,11 +1,13 @@
 class Shape(object):
     def __init__(self):
         pass
+
     def area(self):
         return 0
 
+
 class Square(Shape):
-    def __init__(self, l: float) -> None:
+    def __init__(self, length: float) -> None:
         """Initializes a square.
 
         Parameters
@@ -14,7 +16,7 @@ class Square(Shape):
             Length of the sides of the square.
         """
         super().__init__(self)
-        self.length = l
+        self.length = length
 
     def area(self) -> float:
         """Computes the area of the square.
